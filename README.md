@@ -21,7 +21,7 @@ How to use:
 
 ```javascript
 // Most simple example
-pdf2png.convert(__dirname + "/example.pdf", {}, function(resp){
+pdf2images.convert(__dirname + "/example.pdf", {}, function(resp){
 	if(!resp.success)
 	{
 		console.log("Something went wrong: " + resp.error);	
@@ -47,7 +47,7 @@ pdf2png.convert(__dirname + "/example.pdf", {}, function(resp){
 
 
 // Example using a local ghostscript installation
-pdf2png.convert(__dirname + "/example.pdf", { useLocalGhostscript: true }, function(resp){
+pdf2images.convert(__dirname + "/example.pdf", { useLocalGhostscript: true }, function(resp){
 	if(!resp.success)
 	{
 		console.log("Something went wrong: " + resp.error);
@@ -72,12 +72,11 @@ pdf2png.convert(__dirname + "/example.pdf", { useLocalGhostscript: true }, funct
 	});
 });
 ```
-
 If an error like this appears:
 Something went wrong: Error converting pdf to png: Error: Command failed: 'gs' is not recognized as an internal or external command, operable program or batch file.
 
-Maybe you have the node file you execute in a subfolder and Pdf2Png doesn't set  the path to ghostscript correctly anymore.
-You can rewrite the path to the executable by setting "pdf2png.ghostscriptPath".
+Maybe you have the node file you execute in a subfolder and Pdf2images doesn't set  the path to ghostscript correctly anymore.
+You can rewrite the path to the executable by setting "pdf2images.ghostscriptPath".
 Look at the following example of a script, being in the subfolder /lib.
 It first detects the project-root folder and then builds the absolute path to the ghostscript folder.
 
@@ -89,7 +88,7 @@ projectPath = projectPath.join("\\");
 var gsPath = projectPath + "\\executables\\ghostScript";
 
 // Rewrite the ghostscript path
-pdf2png.ghostscriptPath = gsPath;
+pdf2images.ghostscriptPath = gsPath;
 ```
 
 Options:
@@ -97,10 +96,5 @@ bool useLocalGhostscript
 	If true, the moudle won't set an envirponment attribute to the ghostscript executable.
 	Set this true if you want to use an own local ghostscript installation
 
-bool returnFilePath
-	If you set this true, the module won't return you file-data, it will return you a path to a temporary file instead, containing the image.
-	Don't forget to remove this temporary file.
-
-int quality [ = 100]
-	The quality of the PNG
-	Can be higher and lower, play with it
+int quality [ = 200]
+	The quality (dpi) of the output PNGs.
