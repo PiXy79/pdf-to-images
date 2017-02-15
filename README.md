@@ -1,4 +1,4 @@
-# Pdf2Images
+# Pdf2images
 
 ## Installation
 
