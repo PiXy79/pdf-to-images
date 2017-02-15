@@ -92,6 +92,7 @@ pdf2images.ghostscriptPath = gsPath;
 ```
 
 Options:
+
 bool useLocalGhostscript
 	If true, the moudle won't set an envirponment attribute to the ghostscript executable.
 	Set this true if you want to use an own local ghostscript installation
