@@ -1,4 +1,4 @@
-pdf-to-images.js
+Pdf-to-images
 ============
 
 Install:
@@ -6,8 +6,9 @@ npm install pdf-to-images
 
 ***Credit for this module should go to to @nkognitoo***
 
-This is a fork of an exsiitn module known as pdf2png-mp: https://www.npmjs.com/package/pdf2png-mp.  
-This update allows filenames with spaces to be processed.  
+This is a fork of an exsisting module known as pdf2png-mp: https://www.npmjs.com/package/pdf2png-mp.  
+
+This update rewrite the code to better handle PDF with multiple pages.
 
 This project uses ghostscript, but there's no need to install it (if you use windows).
 If you want the module to use a local installation of ghostscript, set the option useLocalGhostscript true.
