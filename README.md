@@ -1,8 +1,8 @@
-Pdf-to-images
+pdf2images
 ============
 
 Install:
-npm install pdf-to-images
+npm install pdf2images
 
 ***Credit for this module should go to to @nkognitoo***
 
