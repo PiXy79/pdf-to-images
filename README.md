@@ -1,19 +1,17 @@
-pdf2png.js
+pdf-to-images.js
 ============
 
 Install:
-npm install pdf2png-mp2
+npm install pdf-to-images
 
 ***Credit for this module should go to to @nkognitoo***
 
-This is a fork of an exsiitn module known as pdf2png-mp: https://www.npmjs.com/package/pdf2png-mp.  This update allows filenames with spaces to be processed.  
+This is a fork of an exsiitn module known as pdf2png-mp: https://www.npmjs.com/package/pdf2png-mp.  
+This update allows filenames with spaces to be processed.  
 
 This project uses ghostscript, but there's no need to install it (if you use windows).
 If you want the module to use a local installation of ghostscript, set the option useLocalGhostscript true.
 
-Tested on Windows/Tested on AZURE
-
-Not tested on linux!
 If you want to use it with linux, you may replace the ghostscript-executable with something that works with linux.
 Or you install ghostscript for linux.
 http://www.ghostscript.com/
