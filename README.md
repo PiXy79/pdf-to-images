@@ -14,7 +14,7 @@ npm install pdf2images
 
 This is a fork of an exsisting module known as pdf2png-mp: https://www.npmjs.com/package/pdf2png-mp.  
 
-This update rewrite the code to better handle PDF with multiple pages.
+This update rewrite the code to better handle PDF with multiple pages and to return a promise object instead using a standard callback mechanism.
 
 This project uses ghostscript, but there's no need to install it (if you use windows).
 If you want the module to use a local installation of ghostscript, set the option useLocalGhostscript true.
@@ -26,56 +26,25 @@ http://www.ghostscript.com/
 ## Code example
 ```javascript
 // Most simple example
-pdf2images.convert(__dirname + "/example.pdf", {}, function(resp){
-	if(!resp.success)
-	{
-		console.log("Something went wrong: " + resp.error);	
-		return;
+pdf2images.convert(__dirname + '/test.pdf', {})
+	.then(function(resp) {
+		var imageCount = 1;
+		resp.images.forEach(function(data) {
+			fs.writeFile('test/test_' + imageCount + '.png', data, function(err) {
+				if(err) {
+					console.log(err);
+				}
+				else {
+					//console.log('The file was saved!');
+				}
+			});
+			imageCount++;
+		});	
+	},
+	function(err) {
+		console.log('Something went wrong: ' + err.error); 
 	}
-	
-	var pageCount = resp.images.length;
-	console.log('generated ' + pageCount + ' images..');
-
-	var count = 0;
-	resp.images.forEach(function(data) {
-		fs.writeFile("test/example_" + count + ".png", data, function(err) {
-			if(err) {
-				console.log(err);
-			}
-			else {
-				console.log("The file was saved!");
-			}
-		});
-		count++;
-	});
-});
-
-
-// Example using a local ghostscript installation
-pdf2images.convert(__dirname + "/example.pdf", { useLocalGhostscript: true }, function(resp){
-	if(!resp.success)
-	{
-		console.log("Something went wrong: " + resp.error);
-		
-		return;
-	}
-	
-	var pageCount = resp.images.length;
-	console.log('generated ' + pageCount + ' images..');
-
-	var count = 0;
-	resp.images.forEach(function(data) {
-		fs.writeFile("test/example_" + count + ".png", data, function(err) {
-			if(err) {
-				console.log(err);
-			}
-			else {
-				console.log("The file was saved!");
-			}
-		});
-		count++;
-	});
-});
+);
 ```
 If an error like this appears:
 Something went wrong: Error converting pdf to png: Error: Command failed: 'gs' is not recognized as an internal or external command, operable program or batch file.

@@ -12,14 +12,9 @@ var gsPath = projectPath + '\\executables\\ghostScript';
 pdf2images.ghostscriptPath = gsPath;
 
 // Test multiple page PDF
-pdf2images.convert(__dirname + '/test.pdf', {}, function(resp){
-		if(!resp.success)
-		{
-			console.log('Something went wrong: ' + resp.error); 
-			return;
-		}
-
-		var imageCount = 0;
+pdf2images.convert(__dirname + '/test.pdf', {})
+	.then(function(resp) {
+		var imageCount = 1;
 		resp.images.forEach(function(data) {
 			fs.writeFile('test/test_' + imageCount + '.png', data, function(err) {
 				if(err) {
@@ -30,18 +25,17 @@ pdf2images.convert(__dirname + '/test.pdf', {}, function(resp){
 				}
 			});
 			imageCount++;
-		});
-});
+		});	
+	},
+	function(err) {
+		console.log('Something went wrong: ' + err.error); 
+	}
+);		
 
 // Example using a local ghostscript installation
-pdf2images.convert(__dirname + '/example.pdf', { useLocalGhostscript: true }, function(resp){
-		if(!resp.success)
-		{
-			console.log('Something went wrong: ' + resp.error); 
-			return;
-		}
-
-		var imageCount = 0;
+pdf2images.convert(__dirname + '/example.pdf', { useLocalGhostscript: true })
+	.then(function(resp) {
+		var imageCount = 1;
 		resp.images.forEach(function(data) {
 			fs.writeFile('test/example_' + imageCount + '.png', data, function(err) {
 				if(err) {
@@ -52,5 +46,10 @@ pdf2images.convert(__dirname + '/example.pdf', { useLocalGhostscript: true }, fu
 				}
 			});
 			imageCount++;
-		});
-});
+		});	
+	},
+	function(err) {
+		console.log('Something went wrong: ' + err.error); 
+	}
+);		
+
