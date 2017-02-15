@@ -1,4 +1,4 @@
-var pdf2png = require("../lib/pdf2png.js");
+var pdf2png = require("../lib/pdf-to-images.js");
 var fs = require("fs");
 
 var projectPath = __dirname.split("\\");
