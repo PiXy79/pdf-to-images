@@ -8,6 +8,8 @@ Install pdf2images using [npm](http://npmjs.org/):
 npm install pdf2images
 ```
 
+## Description
+
 ***Credit for this module should go to to @nkognitoo***
 
 This is a fork of an exsisting module known as pdf2png-mp: https://www.npmjs.com/package/pdf2png-mp.  
