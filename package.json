@@ -1,18 +1,17 @@
 {
-	"name":			"pdf-to-images",
+	"name":			"pdf2images",
 	"version":		"1.0.0",
 	"description":	"Takes a PDF-document and converts and delivers a PNG",
 	"engine":		"node >= 0.6.0",
-	"main":			"./lib/pdf-to-images.js",
+	"main":			"./lib/pdf2images.js",
 	"dependencies": {
         "tmp":			"0.0.23",
-        "pdf_page_count": "^1.0.10",
         "filesource":	"latest"
 	},
 	"repository" :
 	{ 
 		"type" :	"git",
-		"url" :		"git@github.com:PiXy79/pdf-to-images.git"
+		"url" :		"git@github.com:PiXy79/pdf2images.git"
 	},
-	"homepage": "https://github.com/PiXy79/pdf-to-images"
+	"homepage": "https://github.com/PiXy79/pdf2images"
 }
