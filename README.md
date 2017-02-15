@@ -29,7 +29,7 @@ pdf2png.convert(__dirname + "/example.pdf", {}, function(resp){
 	}
 	
 	var pageCount = resp.images.length;
-	console.log('generated ' + pageCount + ' images..);
+	console.log('generated ' + pageCount + ' images..');
 
 	var count = 0;
 	resp.images.forEach(function(data) {
@@ -56,7 +56,7 @@ pdf2png.convert(__dirname + "/example.pdf", { useLocalGhostscript: true }, funct
 	}
 	
 	var pageCount = resp.images.length;
-	console.log('generated ' + pageCount + ' images..);
+	console.log('generated ' + pageCount + ' images..');
 
 	var count = 0;
 	resp.images.forEach(function(data) {
