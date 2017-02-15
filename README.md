@@ -1,8 +1,12 @@
-pdf2images
-============
+# Pdf2Images
 
-Install:
+## Installation
+
+Install pdf2images using [npm](http://npmjs.org/):
+
+```
 npm install pdf2images
+```
 
 ***Credit for this module should go to to @nkognitoo***
 
@@ -17,8 +21,7 @@ If you want to use it with linux, you may replace the ghostscript-executable wit
 Or you install ghostscript for linux.
 http://www.ghostscript.com/
 
-How to use:
-
+## Code example
 ```javascript
 // Most simple example
 pdf2images.convert(__dirname + "/example.pdf", {}, function(resp){
@@ -91,7 +94,7 @@ var gsPath = projectPath + "\\executables\\ghostScript";
 pdf2images.ghostscriptPath = gsPath;
 ```
 
-Options:
+## Options
 
 bool useLocalGhostscript
 	If true, the moudle won't set an envirponment attribute to the ghostscript executable.
