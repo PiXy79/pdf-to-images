@@ -16,7 +16,7 @@ pdf2images.convert(__dirname + '/test.pdf', {})
 	.then(function(resp) {
 		var imageCount = 1;
 		resp.images.forEach(function(data) {
-			fs.writeFile('test/test_' + imageCount + '.png', data, function(err) {
+			fs.writeFile('example/test_' + imageCount + '.png', data, function(err) {
 				if(err) {
 					console.log(err);
 				}
@@ -37,7 +37,7 @@ pdf2images.convert(__dirname + '/example.pdf', { useLocalGhostscript: true })
 	.then(function(resp) {
 		var imageCount = 1;
 		resp.images.forEach(function(data) {
-			fs.writeFile('test/example_' + imageCount + '.png', data, function(err) {
+			fs.writeFile('example/example_' + imageCount + '.png', data, function(err) {
 				if(err) {
 					console.log(err);
 				}

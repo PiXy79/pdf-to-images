@@ -28,6 +28,7 @@ If you want to use it with MacOSX you can install ghostscript from this site: ht
 This module has been tested on Windows, Linux and MacOSX.
 
 ## Code example
+
 ```javascript
 // Most simple example
 pdf2images.convert(__dirname + '/test.pdf', {})
@@ -54,7 +55,9 @@ If an error like this appears:
 Something went wrong: Error converting pdf to png: Error: Command failed: 'gs' is not recognized as an internal or external command, operable program or batch file.
 
 Maybe you have the node file you execute in a subfolder and Pdf2images doesn't set  the path to ghostscript correctly anymore.
+
 You can rewrite the path to the executable by setting "pdf2images.ghostscriptPath".
+
 Look at the following example of a script, being in the subfolder /lib.
 It first detects the project-root folder and then builds the absolute path to the ghostscript folder.
 
@@ -77,3 +80,11 @@ bool useLocalGhostscript
 
 int quality [ = 200]
 	The quality (dpi) of the output PNGs.
+
+## Unit Test
+
+To execute unit test just run a *test* script
+
+```
+npm run test
+```
