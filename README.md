@@ -83,7 +83,7 @@ int quality [ = 200]
 
 ## Unit Test
 
-To execute unit test just run a *test* script
+Unit test can be executed running npm script *test* :
 
 ```
 npm run test
