@@ -23,6 +23,10 @@ If you want to use it with linux, you may replace the ghostscript-executable wit
 Or you install ghostscript for linux.
 http://www.ghostscript.com/
 
+If you want to use it with MacOSX you can install ghostscript from this site: http://pages.uoregon.edu/koch/.
+
+This module has been tested on Windows, Linux and MacOSX.
+
 ## Code example
 ```javascript
 // Most simple example
