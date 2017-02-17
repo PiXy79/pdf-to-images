@@ -2,7 +2,7 @@
   "name": "pdf2images",
   "version": "1.0.0",
   "description": "Convert a PDF-document into one or more images",
-  "engine": "node >= 0.6.0",
+  "engine": "node >= 0.10.0",
   "main": "./lib/pdf2images.js",
   "dependencies": {
     "filesource": "latest",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/PiXy79/pdf2images",
   "scripts": {
     "example": "node example/example.js",
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "lint": "jshint ./lib/pdf2images.js",
+    "test": "./node_modules/.bin/mocha --reporter spec && npm run -s lint"
   }
 }
