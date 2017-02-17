@@ -1,4 +1,4 @@
-# Pdf2images
+# Pdf2images [![Build Status](https://travis-ci.org/PiXy79/pdf2images.svg?branch=master)](https://travis-ci.org/PiXy79/pdf2images)
 
 ## Installation
 
