@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/PiXy79/pdf2images",
   "scripts": {
+    "example": "node example/example.js",
     "test": "./node_modules/.bin/mocha --reporter spec"
   }
 }
