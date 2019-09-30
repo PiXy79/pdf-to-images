@@ -9,22 +9,21 @@ describe('convert', function () {
 	var stderr;
 
 	before(function (done) {
-		var projectPath = __dirname.split('\\');
+		var projectPath = __dirname.split('/');
 		projectPath.pop();
-		projectPath = projectPath.join('\\');
+		projectPath = projectPath.join('/');
 
-		var ghostscriptPath = projectPath + '\\executables\\ghostScript';
-		// for linux compability
-		ghostscriptPath = ghostscriptPath.split('\\').join('/');
+		var ghostscriptPath = projectPath + '/executables/ghostScript';
 		process.env.Path += ';' + ghostscriptPath;
 
 		exec('gs --version', function (error, stdout, stderr) {
 			if (error) {
 				done(error);
+			} else {
+				stdout = stdout;
+				stderr = stderr;
+				done();
 			}
-			stdout = stdout;
-			stderr = stderr;
-			done();
 		});
 	});
 
